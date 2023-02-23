@@ -1,0 +1,1074 @@
+/* By default 1 rem = 1 em = 16px */
+/* Use em for media query condition (1em=16px), but use rem (not necessarily = 16px) for formats inside the media queries */
+/* Rem inside media queries should be seen as the same rem size as in general.css/style.css */
+
+/* ************************ */
+/* BELOW  1366px (Smaller desktops) */
+/* ************************ */
+
+/* Use 1366px / 16 = 85em */
+@media (max-width: 85em) {
+  /* Below applies to whole page */
+  /* By changing html font-size, we change basically everything on the page */
+  html {
+    /* 9px / 16px = 56.25% */
+    font-size: 56.25%;
+  }
+
+  .about-img-box-2 {
+    bottom: 6%;
+  }
+}
+
+/* ************************ */
+/* BELOW  1200px (Landscape tablets) */
+/* ************************ */
+
+@media (max-width: 75em) {
+  /* Based on above and below, now column-gap is 4.8*9 px, row is 8.4*9 px */
+  .grid {
+    column-gap: 4.8rem;
+    row-gap: 8.8rem;
+  }
+
+  /* Note font-size already shrinked by above code */
+  /* This is for CTA heading only */
+  /* .heading-secondary {
+    font-size: 3.6rem;
+  } */
+
+  /* Reduce nav item spaces */
+  .main-nav-list {
+    gap: 4.8rem;
+    transform: translateX(-8%);
+  }
+
+  /* .about-description-box {
+    padding-left: 1.4rem;
+  } */
+
+  .about-description-box {
+    width: 40%;
+    right: 2%;
+  }
+
+  /* Make descriptions closer to center */
+  .about-description-title {
+    padding-left: 1.4rem;
+  }
+
+  .about-description {
+    padding-left: 1.4rem;
+    padding-right: 3.6rem;
+  }
+
+  .about-img-box-1 {
+    left: 1%;
+  }
+
+  .about-img-box-2 {
+    left: 3%;
+  }
+
+  .about-logo-box {
+    right: 2%;
+  }
+
+  .about-logo {
+    width: 48%;
+  }
+}
+
+/* ************************ */
+/* BELOW  1120px (Tablets)  */
+/* ************************ */
+
+@media (max-width: 70em) {
+  html {
+    /* 8px / 16px = 50% */
+    /* font-size: 50%; */
+    /* 8.5px / 16px = 53.125% */
+    font-size: 53.125%;
+  }
+
+  .main-nav-list {
+    transform: translateX(-5%);
+  }
+
+  .heading-secondary {
+    font-size: 3.8rem;
+  }
+
+  .about-img-box-1 {
+    left: 2%;
+  }
+
+  .about-img-box-2 {
+    bottom: 10%;
+    left: 4%;
+  }
+
+  .about-logo {
+    width: 47%;
+  }
+}
+
+/* ************************ */
+/* BELOW  1056px (Tablets)  */
+/* ************************ */
+
+@media (max-width: 66em) {
+  .hero-img--1 {
+    width: 95%;
+  }
+
+  .hero-img--2 {
+    width: 95%;
+    transform: translate(-8%, -5%);
+  }
+
+  .about-description-box {
+    width: 38%;
+    padding: 5.6rem 2rem 5.6rem 2.4rem;
+  }
+
+  .about-img-box-1 {
+    left: 3%;
+  }
+
+  .about-img-box-2 {
+    bottom: 12%;
+    left: 5%;
+  }
+
+  .logo-img-footer {
+    height: 24rem;
+  }
+}
+
+/* ************************ */
+/* BELOW  1008px (Tablets)   ALSO ADDING MOBILE FORMATS!! */
+/* ************************ */
+
+/* Mobile change done for now, change the rest */
+
+@media (max-width: 63em) {
+  .heading-primary {
+    font-size: 5.6rem;
+  }
+
+  /* Reduce font size of cta secondary heading */
+  .heading-secondary {
+    font-size: 3.6rem;
+  }
+
+  .container-about {
+    margin-bottom: 32rem;
+  }
+
+  .about-description-box {
+    width: 40%;
+    top: -2%;
+  }
+
+  .about-logo {
+    width: 42%;
+    /* top: 10%; */
+  }
+
+  .about-img-box-2 {
+    bottom: 20%;
+  }
+
+  /* /////////////////////////////////// */
+  /* FOR MOBILE NAVIGATION */
+
+  /* menu button shows up */
+  .btn-mobile-nav {
+    display: block;
+  }
+
+  /* FOR MOBILE: Change main-nav bar to an expanded menu screen on the right size of screen and hidden, only activated by menu button click */
+  .main-nav {
+    background-color: #2e302f;
+
+    /* NOTE: Set parent element 'header' to relative, don't set body, if body is set as relative, effects might not work */
+    position: absolute;
+
+    /* Start element from viewport top left */
+    top: 0;
+    left: 0;
+    /* 100% viewport width */
+    width: 100%;
+    /* 100% viewport height, regardless of how you change viewport  (as long as width is <= 60em) */
+    height: 100vh;
+
+    /* Set the expanded nav to the side of the viewport (hidden and cannot be scrolled to) when media query applies */
+    /* Now if nav-open is added, the expanded nav will 'slide in' from the right side as transition was added */
+    /* Because in .nav-open .main-nav (below), transform: translate(0) is written */
+    transform: translateX(100%);
+
+    /* Centering the ul element (main-nav-list) by using flex */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Transition: ease in: first slow, then fast */
+    transition: all 0.5s ease-in;
+
+    /* Hide main-nav by default (meaning when media query applies as viewport shrinks), only appear upon menu button click */
+    /* ////Below DOESN"T ALLOW TRANSITION, don't use! */
+    /* ////display: none */
+
+    /* Correct way to hide w/o using display: none */
+    /* 1) Hide it visually */
+    opacity: 0;
+
+    /* 2) Make it unaccessible to keyboard/mouse */
+    pointer-events: none;
+
+    /* 3) Hide it from screen readers */
+    visibility: hidden;
+  }
+
+  /* Change the ul flex direction to column, restore the gap to 4.8 (now vertical)  */
+  .main-nav-list {
+    flex-direction: column;
+    /* gap bottom (instead of right) */
+    gap: 4.8rem;
+  }
+
+  /* Enlarge the li items' font size */
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 3rem;
+  }
+
+  /* ! Below 3 'nav-open' formats will NOT apply to its child elements if 'nav-open' class isnt' present in HTML (which it isn't upon media query);  */
+  /* Basically: When media query applies, below syntax will be added, but nothing changes on screen; Only when 'nav-open' is added to 'header' element (by JS), then below format will be applied to .main-nav (i.e. expanded nav sliding in from right side), also the icons */
+
+  /* HTML: <header class="header nav-open"> */
+  /* IMPORTANT: If nav-open class is present (added) to header element (by JS), below format will be applied to header */
+  /*            If nav-open class is removed, below element cannot be found on the html, therefore, format won't apply */
+  .nav-open .main-nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    /* Translate the expanded nav back to the original place to cover the viewport */
+    /* Now if nav-open is added, the nav will 'slide in' from the right side as transition was added */
+    transform: translate(0);
+  }
+
+  /* Show the 'X' sign when 'nav-open' class is added in HTML */
+  .nav-open .icon-mobile-nav[name="close-outline"] {
+    display: block;
+  }
+
+  /* Hide the 'menu' button when 'nav-open' class is added in HTML */
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
+    display: none;
+  }
+
+  /* Push the header-links to the right, next to the mobile button */
+  .header-links {
+    /* Below is the key, set left to auto, element will move to the right */
+    margin-left: auto;
+    margin-right: 2rem;
+  }
+}
+
+/* ************************ */
+/* BELOW  912px (Smaller Tablets) 
+/* ************************ */
+
+@media (max-width: 57em) {
+  /* Reduce tabs content heading font size */
+  .heading-tertiary-sm {
+    font-size: 2.2rem;
+  }
+
+  .about-description-box {
+    width: 42%;
+    padding: 5.6rem 1.4rem 5.6rem 1.6rem;
+  }
+
+  .about-logo-box {
+    right: 1%;
+  }
+
+  .about-logo {
+    width: 39%;
+    /* top: 10%; */
+  }
+
+  .about-img-box-2 {
+    bottom: 25%;
+  }
+
+  .logo-img-footer {
+    height: 22rem;
+  }
+
+  .contact-map {
+    width: 95%;
+    justify-self: end;
+  }
+}
+
+/* ************************ */
+/* BELOW  848px (Smaller Tablets) 
+/* ************************ */
+
+/* Reduce heading-secondary margin */
+@media (max-width: 53em) {
+  /* For main-nav-list shown upon clicking the menu button, reduce gap */
+  .main-nav-list {
+    gap: 4.6rem;
+  }
+
+  /* Reduce font size of menu items */
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 2.6rem;
+  }
+
+  .heading-primary {
+    font-size: 5rem;
+  }
+
+  .hero-title {
+    left: -10rem;
+  }
+
+  .hero-description {
+    font-size: 1.5rem;
+  }
+
+  .hero-sub-description {
+    padding-left: 7rem;
+  }
+
+  .container-about {
+    margin-bottom: 4rem;
+  }
+
+  .about-img-1 {
+    /* position: absolute; */
+    width: 68%;
+  }
+
+  .about-img-box-2 {
+    display: none;
+    bottom: 43%;
+  }
+
+  .about-img-2 {
+    width: 23%;
+  }
+
+  .about-logo-box {
+    right: 6%;
+    top: 3%;
+  }
+
+  .about-logo {
+    width: 35%;
+    /* top: 10%; */
+  }
+
+  .about-description-box {
+    width: 80%;
+    padding: 5.6rem 1.4rem 5.6rem 1.6rem;
+    margin-top: 29rem;
+    right: 4%;
+    background-color: #5859592f;
+    text-shadow: 2px 1px 5px #2c342c;
+  }
+
+  .media-featured-text-container {
+    padding: 1.5rem;
+  }
+
+  .contact-information {
+    padding-left: 4rem;
+  }
+
+  .contact-text {
+    padding: 0 1.2rem;
+  }
+
+  .contact-map {
+    width: 93%;
+    height: 70%;
+    justify-self: end;
+  }
+
+  .cta-text-box {
+    padding: 4.8rem 6.8rem 6.4rem 4.8rem;
+  }
+
+  .cta-text {
+    font-size: 1.6rem;
+  }
+
+  .heading-secondary {
+    font-size: 3.3rem;
+  }
+
+  .logo-img-footer {
+    height: 20rem;
+  }
+}
+
+/* ************************ */
+/* BELOW  736px (Smaller Tablets)
+/*NOTE: Smaller tablets and Phones should have different queries if possible  */
+/*NOTE: But it depends on the situation; In this situation, once it's below 704px, all grids reduce to 1 col */
+/* ************************ */
+
+@media (max-width: 46em) {
+  html {
+    /* 8px / 16px = 50% */
+    font-size: 50%;
+  }
+
+  /* Reduce font size of menu items */
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 2.4rem;
+  }
+
+  /* Reduce font size */
+  .heading-secondary {
+    font-size: 3.2rem;
+  }
+
+  /* Reduce btn font size */
+  .btn,
+  .btn:link,
+  .btn:visited {
+    font-size: 1.8rem;
+  }
+
+  .media-featured-logo {
+    /* height: 3.2rem; */
+    width: 10rem;
+  }
+
+  .contact-text {
+    padding: 0 1.4rem 0 0.8rem;
+  }
+}
+
+/* ************************ */
+/* BELOW  688px (Smaller Tablets)
+/* ************************ */
+@media (max-width: 43em) {
+  .heading-primary {
+    font-size: 4.2rem;
+  }
+
+  .hero-descriptions {
+    margin-top: 4.6rem;
+  }
+
+  .hero-sub-description {
+    padding-left: 4rem;
+  }
+
+  .logo-img {
+    height: 5.5rem;
+  }
+
+  .logo-name {
+    height: 3.5rem;
+    transform: translateY(-6%);
+  }
+
+  .grid-menu-message {
+    column-gap: 2rem;
+    grid-template-columns: 0.2fr 0.6fr 1.5fr;
+  }
+
+  .menu-message-img-2 {
+    width: 110%;
+    transform: translateX(-15%, -15%);
+  }
+
+  .menu-content {
+    padding: 0 1.6rem 0 2.4rem;
+  }
+
+  .menu-category-container {
+    padding-right: 0rem;
+  }
+
+  .menu-item-box {
+    padding-left: 4rem;
+  }
+
+  .btn-menu {
+    padding: 1rem 1.6rem;
+  }
+
+  .about-logo {
+    width: 27%;
+  }
+
+  .about-description-box {
+    width: 90%;
+    margin-top: 23rem;
+    background-color: #5859593a;
+    text-shadow: 2px 1px 5px #2c342c;
+  }
+
+  .section-about {
+    padding-bottom: 6.4rem;
+  }
+
+  .section-media {
+    padding: 2.4rem 0 3.2rem 0;
+  }
+
+  .container-media-ratings {
+    gap: 1.6rem;
+  }
+
+  .media-rating-icon {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .media-featured-logo {
+    width: 8rem;
+  }
+
+  .media-featured-text-container {
+    padding: 1.2rem 0.4rem;
+  }
+
+  .media-featured-text {
+    font-size: 1.4rem;
+  }
+
+  .contact-information {
+    padding-left: 2.8rem;
+    padding-top: 5rem;
+    /* width: 180%; */
+  }
+
+  .contact-details {
+    padding-bottom: 8rem;
+    margin-top: 5.6rem;
+  }
+
+  .contact-detail {
+    gap: 1rem;
+  }
+
+  .cta {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-text-box {
+    padding: 22rem 4.8rem 4rem 4rem;
+  }
+
+  .heading-secondary {
+    font-size: 3rem;
+    margin-bottom: 4rem !important;
+  }
+
+  .cta-text {
+    margin-top: 3rem;
+    margin-bottom: 3.4rem;
+  }
+
+  .logo-img-footer {
+    height: 19rem;
+  }
+}
+
+/* ************************ */
+/* Below 560px  (mobile)
+/* Typical mobile phone is 320-480px; So check around 320 and see if it works well */
+/* ************************ */
+
+@media (max-width: 35em) {
+  /* //////////////// */
+  /* Header changes */
+
+  /* Make header-links elements hidden, only show when .nav-open is applied (see below) */
+  .header-links {
+    display: none;
+  }
+
+  /* ! Below 'nav-open' formats will NOT apply to its child elements if 'nav-open' class isnt' present in HTML (which it isn't upon media query);  */
+  /* Basically: When media query applies, below syntax will be added, but nothing changes on screen; Only when 'nav-open' is added to 'header' element (by JS), then below format will be applied to 'header-links'  */
+  /* Upon clicking on button, nav-open class is added, then header-links element will show up */
+  /* Note the smooth fade in effect */
+  .nav-open .header-links {
+    display: flex;
+    /* animation see keyframes in 'style.css' for fadeIn definition */
+    animation: fadeIn 2s;
+    -webkit-animation: fadeIn 2s;
+    -moz-animation: fadeIn 2s;
+    -o-animation: fadeIn 2s;
+    -ms-animation: fadeIn 2s;
+  }
+
+  /* Upon clicking on button, logo-container element has to disappear, making room for .header-links to appear */
+  .nav-open .logo-container {
+    display: none;
+  }
+
+  /* //////////// */
+
+  /* Reduce font size of menu items */
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 2.2rem;
+  }
+
+  /* Open body's overflow permission (used for menu) so can scroll to the right */
+  body {
+    overflow-x: visible;
+  }
+
+  /* Hero section */
+  .hero {
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+
+  /* Make the img box 1 the 2nd row (after the hero text box) */
+  .hero-img-box-1 {
+    grid-row: 2;
+  }
+
+  /* Make the text box as the first row (instead of the 2nd item in the grid) */
+  .hero-text-box {
+    grid-row: 1;
+    z-index: 2;
+  }
+
+  /* Still absolutely positioned, out of flow */
+  .hero-title {
+    /* Make the title back into the flow */
+    /* position: static; */
+    /* transform: translateY(-100%); */
+    top: 4rem;
+    left: 0;
+  }
+
+  /* Center the title */
+  .heading-primary {
+    font-size: 3.4rem;
+    text-align: center;
+    padding: 1rem 4rem;
+  }
+
+  /* Hide it, since bottom contact has this information */
+  .hero-descriptions {
+    display: none;
+    /* position: static; */
+    transform: translateY(120%);
+    background-color: #58595991;
+    /* z-index: 3; */
+    text-shadow: 2px 1px 5px #2c342c;
+  }
+
+  /* img box 2 is row 4 */
+  .hero-img-box-2 {
+    grid-row: 4;
+    /* margin-top: 2rem; */
+  }
+
+  .hero-img--2 {
+    transform: translate(0, 0);
+  }
+
+  /* Make sub-box row 3 */
+  .hero-text-sub-box {
+    grid-row: 3;
+    justify-content: center;
+    margin-top: 6.6rem;
+    /* margin-bottom: rem; */
+  }
+
+  .hero-sub-description {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 3.2rem;
+    padding-left: 0rem;
+    text-align: center;
+  }
+
+  /* Menu section */
+  /* Change the grid to 2 cols */
+  .grid-menu-message {
+    grid-template-columns: 0.5fr 1fr;
+  }
+
+  /* Make the text box span 2 cols (whole width) */
+  .menu-message-description-box {
+    grid-column: span 2;
+    padding-top: 5.6rem;
+  }
+
+  /* Menu content section */
+
+  .menu-title {
+    margin-left: 0rem;
+    padding: 0 2.4rem;
+  }
+
+  /* Change flex direction to verticle */
+  .menu-content {
+    flex-direction: column;
+    padding: 0 1.6rem 0 1.6rem;
+  }
+
+  /* Change menu category direction to horizontal */
+  .menu-category-container {
+    flex-direction: row;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; */
+    gap: 0.4rem;
+    margin-bottom: 3rem;
+  }
+
+  /* contains menu contents */
+  .menu-item-box {
+    padding-left: 1rem;
+  }
+
+  .btn-menu {
+    padding: 0.4rem 0.8rem;
+  }
+
+  /* About Section */
+  /* Make container into a vertical flexbox */
+  .container-about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    margin-top: 10rem;
+  }
+
+  .about-img-box-1 {
+    position: static;
+    align-items: start;
+    justify-content: center;
+  }
+
+  .about-img-1 {
+    width: 90%;
+  }
+
+  .about-description-box {
+    position: static;
+    align-self: center;
+    margin-top: 0rem;
+    padding: 4.4rem 1rem;
+    /* right: 4% was nullified because element is now static */
+  }
+
+  .about-description {
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+  }
+
+  /* Make the logo disappear */
+  .about-logo-box {
+    display: none;
+  }
+
+  /* Media section */
+
+  .section-media {
+    margin-top: 18rem;
+  }
+
+  .media-title {
+    margin-bottom: 1.2rem;
+    padding-bottom: 5.6rem;
+    margin-left: 2.4rem;
+    margin-right: 2.4rem;
+  }
+
+  .container-media-ratings {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-left: 2.4rem;
+    margin-right: 2.4rem;
+    margin-bottom: 6.4rem;
+  }
+
+  /* Make sure to move the grid items around */
+  .media-featured-logos {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding-top: 4.2rem;
+    padding-left: 4.6rem;
+    padding-right: 4.6rem;
+    /* border-top: 0.2rem solid #f5af0c0f; */
+  }
+
+  .media-featured-logo {
+    width: 12rem;
+  }
+
+  .media-featured-text {
+    font-size: 1.8rem;
+  }
+
+  /* Set the correct rows for each grid item */
+  .featured-logo-cover-1 {
+    grid-row: 1;
+  }
+
+  .featured-logo-cover-2 {
+    grid-row: 3;
+  }
+
+  .featured-logo-cover-3 {
+    grid-row: 5;
+  }
+
+  .featured-logo-cover-4 {
+    grid-row: 7;
+  }
+
+  .featured-logo-cover-5 {
+    grid-row: 9;
+  }
+
+  .media-featured-text-container {
+    margin-bottom: 4.4rem;
+  }
+
+  .media-featured-text-container-1 {
+    grid-row: 2;
+  }
+
+  .media-featured-text-container-2 {
+    grid-row: 4;
+  }
+
+  .media-featured-text-container-3 {
+    grid-row: 6;
+  }
+
+  .media-featured-text-container-4 {
+    grid-row: 8;
+  }
+
+  .media-featured-text-container-5 {
+    grid-row: 10;
+  }
+
+  /* Map Section - adjust the margins */
+  .container-contact {
+    grid-template-columns: 1fr;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .contact-information {
+    padding-left: 0rem;
+    width: 100%;
+    background-image: linear-gradient(to right top, #1718188a, #090a090f);
+  }
+
+  .contact-header-text {
+    /* text-align: center; */
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  .contact-details {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  .contact-map {
+    grid-row: 1;
+    border-radius: 2px;
+    width: 100%;
+    height: 100%;
+    justify-self: center;
+    transform: translateY(0%);
+  }
+
+  /* CTA Section */
+  /* Delete the img from cta, add the img to the newly appearing cta-img-container */
+  .cta {
+    background-image: none;
+  }
+
+  .cta-text-box {
+    padding: 4rem 4rem 4rem 4rem;
+    background-image: linear-gradient(to right top, #1718188a, #090a090f);
+    border-radius: 5px;
+  }
+
+  .cta-text {
+    margin-right: 0;
+  }
+
+  .cta-img-container {
+    display: block;
+    grid-row: 1;
+  }
+
+  /* For CTA heading, OKed */
+  .heading-secondary {
+    font-size: 2.6rem;
+    /* margin-bottom: 4rem !important; */
+  }
+
+  /* for CTA btn OKed */
+  .btn,
+  .btn:link,
+  .btn:visited {
+    padding: 1.2rem 1.8rem;
+  }
+
+  .logo-img-footer {
+    height: 17rem;
+  }
+}
+
+/* ************************ */
+/* Below 416px  (only needed for a few elements for smaller mobile)
+/* ************************ */
+
+@media (max-width: 26em) {
+  .heading-primary {
+    font-size: 2.8rem;
+  }
+
+  .media-featured-logo {
+    width: 10rem;
+  }
+
+  .media-featured-text {
+    font-size: 1.6rem;
+  }
+}
+
+/* ************************ */
+/* FIXING Safari flexbox gap 
+/* ************************ */
+
+/* Since some Safari browsers don't support gap property for flexbox, we have to manually add the gap properties to the flexboxes in the code */
+/* If browser support not found for flexbox gap, below code will be added; The control is in Javascript */
+/* NOTE: pre-written code was added in JS to add 'no-flexbox-gap' class to 'body' element when code run in safari */
+/* NOTE: Have to make sure the margin for each element below matches with the margin in the actual CSS properties */
+/* NOTE: OK to add media queries again (same width) */
+/* NOTE: Below gap should be added to all elements that are not the last element of the flex container, so no gap added after the last element */
+
+/* How to add: check all the 'gap' of all css properties, focus on the flexbox containers only, and add the margins accordingly to the flexbox's child elements (except the last element) */
+/* How to adjust media queries.part 1: Check all gaps in queries.css, anytime there's a gap newly defined in queries, you have to set that breakpoint and adjust the margin-right for that particular breakpoint */
+/* How to adjust media queries.part 2: Check all gaps and see if flex direction changes from horizontal to vertical at certain breakpoints, If so, then add media query at that breakpoint, and reset the margin-right to 0, and set margin-bottom to the flex-box gap width; vice versa if flex is changed from vertical to horizontal */
+/* How to adjust media queries.part 3: Find the flexbox gap, and add margin to the child elements of the flexbox element just like in normal flexbox adjustment. Focus on the child elements */
+
+/* Headers */
+/* Parent flexbox: logo-container */
+.no-flex-gap .logo-img {
+  margin-right: 0.5rem;
+}
+
+/* Parent flexbox: header-links */
+.no-flex-gap .header-links .social-links {
+  margin-right: 2.4rem;
+}
+
+.no-flex-gap .header-links .social-links li:not(:last-child) {
+  margin-right: 1.8rem;
+}
+
+.no-flexbox-gap .main-nav-list li:not(:last-child) {
+  margin-right: 6rem;
+}
+
+/* Hero */
+/* Parent flexbox: hero-description */
+.no-flexbox-gap .hero-icon {
+  margin-right: 2rem;
+}
+
+/* Menu */
+/* Parent flexbox: menu-category-container  :: Vertical flexbox */
+.no-flexbox-gap .menu-category:not(:last-child) {
+  margin-bottom: 2.2rem;
+}
+
+/* Media */
+/* Parent flexbox: media-rating-container */
+.no-flexbox-gap .media-rating-icon-container:not(:last-child) {
+  margin-right: 1rem;
+}
+
+/* Contact */
+/* Parent flexbox: contact-detail */
+.no-flexbox-gap .contact-icon {
+  margin-right: 2rem;
+}
+
+/* Footer */
+/* Parent flexbox: header-links */
+.no-flex-gap .footer-links .social-links li:not(:last-child) {
+  margin-right: 1.8rem;
+}
+
+/* //////////////////// MEDIA QUERIES Flex Adjustment ///////////////////////// */
+
+/* Check all gaps in the queries.css */
+/* NOTE: Not adjusting 'row-gap' nor 'column-gap' properties, especially for grids, as unsure if Safari supports them */
+
+@media (max-width: 75em) {
+  .no-flexbox-gap .main-nav-list li:not(:last-child) {
+    margin-right: 4rem;
+  }
+}
+
+@media (max-width: 63em) {
+  /* horizontal to vertical (for mobile) */
+  .no-flexbox-gap .main-nav-list li:not(:last-child) {
+    margin-right: 0rem;
+    margin-bottom: 4.8rem;
+  }
+}
+
+@media (max-width: 53em) {
+  .no-flexbox-gap .main-nav-list li:not(:last-child) {
+    margin-bottom: 4.6rem;
+  }
+}
+
+@media (max-width: 43em) {
+  .no-flexbox-gap .contact-icon {
+    margin-right: 1rem;
+  }
+}
+
+/* For mobile */
+@media (max-width: 35em) {
+  /* Parent flexbox: menu-category-container  :: Vertical flexbox --> horizontal flexbox */
+  /* Change menu category direction to horizontal */
+  .no-flexbox-gap .menu-category:not(:last-child) {
+    margin-bottom: 0rem;
+    margin-right: 0.4rem;
+  }
+}
+
+/* 
+- Font sizes
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98 
+
+- Spacing system 
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 72 / 80 / 96 / 128  
+*/

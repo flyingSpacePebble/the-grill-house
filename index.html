@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Always Include this line for responsive design!! -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Meta description -->
+    <meta
+      name="description"
+      content="The Grill House is the ultimate restaurant in town that has everything you'd wish for: Burgers, Sandwich, Grills, Pizza, Fries, Pasta, Salad, Falafel, and much more. You name the food, we'll grill it to your satisfaction, guaranteed fresh and delicious. That's the motto of The Grill House."
+    />
+
+    <!-- icon in title - 64 by 64 -->
+    <link rel="icon" href="img/favicon-64by64.png" />
+
+    <!-- icon for iOS homescreen as favorited website 180 by 180 -->
+    <link rel="apple-touch-icon" href="img/favicon-180by180.png" />
+
+    <!-- icon for Android homescreen as favorited website - create manifest.webmanifest file -->
+    <!-- NOTE in the manifest.webmanifest file, specify the imgs sizes as 512 by 512, and 192 by 192 -->
+    <link rel="manifest" href="manifest.webmanifest" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Add preconnect/dns-prefetch to third party sites -->
+    <link rel="preconnect" href="http://instagram.com" />
+    <!-- <link rel="dns-prefetch" href="http://instagram.com" /> -->
+
+    <link rel="preconnect" href="http://www.facebook.com" />
+    <!-- <link rel="dns-prefetch" href="http://www.facebook.com" /> -->
+
+    <link rel="preconnect" href="http://twitter.com" />
+    <!-- <link rel="dns-prefetch" href="http://twitter.com" /> -->
+
+    <!-- css -->
+    <!-- OK to include multiple CSS files into one HTML -->
+    <link rel="stylesheet" href="general.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="queries.css" />
+
+    <!-- JavaScript -->
+    <script defer src="script.js"></script>
+
+    <!-- To enable smooth scrolling for safari, need below -->
+    <script
+      defer
+      src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js
+    "
+    ></script>
+
+    <title>The Grill House &mdash; We Grill Everything!</title>
+  </head>
+  <body>
+    <header class="header fade-in">
+      <div class="logo-container">
+        <a href="#">
+          <img
+            class="logo-img"
+            alt="The Grill House logo"
+            src="img/Logo_black_burger.png"
+          />
+        </a>
+        <a href="#">
+          <img
+            class="logo-name"
+            alt="The Grill House logo title"
+            src="img/Logo_black_title_bigger.png"
+          />
+        </a>
+      </div>
+      <!-- main-nav will be changed in mobile navigation -->
+      <nav class="main-nav">
+        <ul class="main-nav-list">
+          <li>
+            <a href="#menu-message" class="main-nav-link">Menu</a>
+          </li>
+          <li>
+            <a href="#about" class="main-nav-link">About</a>
+          </li>
+          <li><a href="#contact" class="main-nav-link">Contact</a></li>
+
+          <!-- <li><a href="#cta" class="main-nav-link nav-cta">Order</a></li> -->
+          <li><a href="#cta" class="main-nav-link">Order</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-links">
+        <!-- Social icons: Copy from ion icons-->
+        <ul class="social-links">
+          <li>
+            <a class="header-link" href="https://instagram.com">
+              <ion-icon class="social-icon" name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a class="header-link" href="https://www.facebook.com">
+              <ion-icon class="social-icon" name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a class="header-link" href="https://twitter.com">
+              <ion-icon class="social-icon" name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+        </ul>
+        <div class="header-phone">
+          <p>
+            <a class="header-phone-number" href="tel:323-888-6788">
+              323.888.6788
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Used for mobile screens -->
+      <!-- By default, below is hidden, only appear when media query hits mobile navigation width -->
+      <button class="btn-mobile-nav">
+        <!-- Two icons in the same button, but only one is shown at one time -->
+        <!-- 'name' is attribute -->
+        <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
+        <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+      </button>
+    </header>
+
+    <main>
+      <!-- Section Hero -->
+      <section class="section-hero">
+        <!-- Grid container -->
+        <div class="hero">
+          <!-- Hero Image top left -->
+          <div class="hero-img-box hero-img-box-1 fade-in-left">
+            <img
+              src="img/hero-img-1-sq-sqshed.jpg"
+              class="hero-img hero-img--1"
+              alt="Burger"
+            />
+          </div>
+
+          <!-- Hero title and hero content box -->
+          <div class="hero-text-box fade-in-top">
+            <div class="hero-title">
+              <h1 class="heading-primary">GOOD TIMES WITH GREAT FRIENDS</h1>
+            </div>
+            <!-- Hero Text -->
+            <div class="hero-descriptions">
+              <div class="hero-description hero-contact">
+                <div class="hero-icon icon-address">
+                  <ion-icon
+                    class="icon-contact"
+                    name="location-sharp"
+                  ></ion-icon>
+                </div>
+                <p>
+                  1510 SOUTH MARINA DEL MAR <br />
+                  SANTA MONICA, 90001 <br />LOCATED INSIDE THE PIER <br /><span
+                    class="hero-phone"
+                    >323.888.6788</span
+                  >
+                </p>
+              </div>
+
+              <div class="hero-description hero-open-hours">
+                <div class="hero-icon icon-hours">
+                  <ion-icon class="icon-contact" name="time-sharp"></ion-icon>
+                </div>
+                <p>
+                  SUN-THURS: 12PM-10PM
+                  <br />FRI-SAT: 12PM-11PM
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero sub message text box -->
+          <div class="hero-text-sub-box fade-in-bottom">
+            <div class="heading-tertiary-sm hero-sub-description">
+              SERVING TASTY BITES <br />
+              SINCE 2015
+            </div>
+          </div>
+
+          <!-- Hero Image bottom right -->
+          <div class="hero-img-box hero-img-box-2 fade-in-right">
+            <img
+              src="img/hero-img-2-sq-sqshed.jpg"
+              class="hero-img hero-img--2"
+              alt="Meal"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Menu Message -->
+      <section class="section-menu-message" id="menu-message">
+        <!-- Container for section content (3 col grid) -->
+        <div class="container grid-menu-message fade-in">
+          <!-- Menu Message Image 1 -->
+          <div class="menu-message-img-box menu-message-img-box-1 fade-in-left">
+            <img
+              src="img/menu-img-1-sqshed.jpg"
+              class="menu-message-img menu-message-img-1"
+              alt="Menu photo"
+            />
+          </div>
+          <!-- Menu Message Image 2 -->
+          <div class="menu-message-img-box menu-message-img-box-2 fade-in-left">
+            <img
+              src="img/menu-img-2-sqshed.jpg"
+              class="menu-message-img menu-message-img-2"
+              alt="Menu photo"
+            />
+          </div>
+          <!-- Menu Message Description -->
+          <div class="menu-message-description-box fade-in-right">
+            <div class="heading-tertiary-sm menu-message-description-title">
+              SATISFY YOUR CRAVINGS
+            </div>
+            <p class="menu-message-description">
+              Our menu features foodie-friendly street and classic American
+              foods for you to pair with your favorite drink. We feature many
+              classic pub favorites while incorporating subtle but unique South
+              American flavors to give your taste buds a wake up call.
+
+              <br /><br />Our small bites are perfect for sharing while our
+              burgers are hearty enough to satisfy the insatiable. You can enjoy
+              our food the same whether you’re here for a quick lunch or
+              enjoying a casual night out with friends and family. Be present
+              and talk to each other!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section MENU -->
+      <section class="section-menu" id="menu">
+        <div class="container menu">
+          <!-- Menu Title segment -->
+          <div class="container menu-title">
+            <div class="heading-tertiary-sm fade-in">MENU</div>
+          </div>
+
+          <!-- Menu Content segment -->
+          <div class="container menu-content">
+            <!-- Menu category -- left side -->
+            <div class="menu-category-container fade-in">
+              <div class="menu-category menu-specials">
+                <button class="btn-menu btn-menu-active" data-tab="1">
+                  SPECIALS
+                </button>
+              </div>
+              <div class="menu-category menu-snacks">
+                <button class="btn-menu" data-tab="2">SNACKS</button>
+              </div>
+              <div class="menu-category menu-tacos">
+                <button class="btn-menu" data-tab="3">TACOS</button>
+              </div>
+              <div class="menu-category menu-fries">
+                <button class="btn-menu" data-tab="4">FRIES</button>
+              </div>
+              <div class="menu-category menu-burgers">
+                <button class="btn-menu" data-tab="5">BURGERS</button>
+              </div>
+              <div class="menu-category menu-Salads">
+                <button class="btn-menu" data-tab="6">SALADS</button>
+              </div>
+            </div>
+            <!-- Menu details -- right side -->
+            <div class="menu-item-box fade-in">
+              <!-- Menu 1 -- Specials -->
+              <div class="menu-item menu-item-1 menu-item-active">
+                <!-- menu item top text - Intro to menu item -->
+                <div>
+                  <p class="menu-item-top-text">
+                    Available Mon - Fri, 3pm - 6pm & Sun - Wed, 10pm - close.
+                    <br />For dine-in only.
+                  </p>
+                </div>
+                <!-- menu item actual content -->
+                <div class="menu-item-content">
+                  <!-- Menu dish box includes title, price, description -->
+                  <div class="menu-dish-box">
+                    <div class="menu-dish-title-box">
+                      <p class="menu-dish-title heading-tertiary-smaller">
+                        ELOTE SALSA & CHIPS
+                      </p>
+                      <p class="menu-dish-price heading-tertiary-smaller">
+                        8.5
+                      </p>
+                    </div>
+                    <p class="menu-dish-description">
+                      Fire roasted sweet corn, pico de gallo, cilantro lime
+                      crema, tajin, and queso fresco.
+                    </p>
+                    <p class="menu-dish-extra">Dangerously addicting!</p>
+                  </div>
+                  <div class="menu-dish-box">
+                    <div class="menu-dish-title-box">
+                      <p class="menu-dish-title heading-tertiary-smaller">
+                        NASHVILLE HOT FRIES
+                      </p>
+                      <p class="menu-dish-price heading-tertiary-smaller">6</p>
+                    </div>
+                    <p class="menu-dish-description">
+                      Served with a side of ranch.
+                    </p>
+                    <p class="menu-dish-extra"></p>
+                  </div>
+                  <div class="menu-dish-box">
+                    <div class="menu-dish-title-box">
+                      <p class="menu-dish-title heading-tertiary-smaller">
+                        CHIPOTLE CHICKEN QUESADILLA
+                      </p>
+                      <p class="menu-dish-price heading-tertiary-smaller">
+                        10.5
+                      </p>
+                    </div>
+                    <p class="menu-dish-description">
+                      Grilled chipotle lime chicken, cheese, and cilantro lime
+                      crema.
+                    </p>
+                    <p class="menu-dish-extra">
+                      Served with a side of pico de gallo and guacamole.
+                    </p>
+                  </div>
+                  <div class="menu-dish-box">
+                    <div class="menu-dish-title-box">
+                      <p class="menu-dish-title heading-tertiary-smaller">
+                        HANGOVER FRIES
+                      </p>
+                      <p class="menu-dish-price heading-tertiary-smaller">
+                        9.5
+                      </p>
+                    </div>
+                    <p class="menu-dish-description">
+                      Chopped ground beef, caramelized onion, American cheese,
+                      pickled fresno chilis, and fry sauce.
+                    </p>
+                    <p class="menu-dish-extra"></p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Menu 2 -- Snacks -->
+              <div class="menu-item menu-item-2">
+                <!-- menu item top text - Intro to menu item -->
+                <div>
+                  <p class="menu-item-top-text">Great for sharing!</p>
+                </div>
+                <!-- menu item actual content -->
+                <div class="menu-item-content">
+                  <!-- Menu dish box includes title, price, description -->
+                  <div class="menu-dish-box">
+                    <div class="menu-dish-title-box">
+                      <p class="menu-dish-title heading-tertiary-smaller">
+                        BEER BRINED WINGS
+                      </p>
+                      <p class="menu-dish-price heading-tertiary-smaller">18</p>
+                    </div>
+                    <p class="menu-dish-description">
+                      1 1/2 lb. of jumbo wings tossed tossed in one of our house
+                      made sauces! <br />Served with buttermilk ranch or blue
+                      cheese dipping sauce.
+                    </p>
+                    <p class="menu-dish-extra"></p>
+                  </div>
+                  <div class="menu-dish-box">
+                    <div class="menu-dish-title-box">
+                      <p class="menu-dish-title heading-tertiary-smaller">
+                        CRIPSY CAULIFLOWER
+                      </p>
+                      <p class="menu-dish-price heading-tertiary-smaller">10</p>
+                    </div>
+                    <p class="menu-dish-description">
+                      <b>Choose from:</b> buffalo, honey garlic BBQ, and sambal;
+                      served with side of buttermilk ranch or blue cheese
+                      dipping sause.
+                    </p>
+                    <p class="menu-dish-extra"></p>
+                  </div>
+                  <div class="menu-dish-box">
+                    <div class="menu-dish-title-box">
+                      <p class="menu-dish-title heading-tertiary-smaller">
+                        ELOTE SALSA & CHIPS
+                      </p>
+                      <p class="menu-dish-price heading-tertiary-smaller">10</p>
+                    </div>
+                    <p class="menu-dish-description">
+                      Fire roasted sween corn, pico de gallo, cilantro lime
+                      crema, tajin, and queso fresco.
+                    </p>
+                    <p class="menu-dish-extra"></p>
+                  </div>
+                  <div class="menu-dish-box">
+                    <div class="menu-dish-title-box">
+                      <p class="menu-dish-title heading-tertiary-smaller">
+                        GARBAGE NACHOS
+                      </p>
+                      <p class="menu-dish-price heading-tertiary-smaller">18</p>
+                    </div>
+                    <p class="menu-dish-description">
+                      Grilled chipotle lime chicken, slow roasted pork belly,
+                      cheese, pico de gallo, guacamole, and chipotle lime crema.
+                    </p>
+                    <p class="menu-dish-extra">Sub for fries +1</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Menu 3 -- Tacos -->
+              <div class="menu-item menu-item-3">
+                <!-- menu item top text - Intro to menu item -->
+                <div>
+                  <p class="menu-item-top-text">
+                    Two tacos per order.
+                    <br />Add Side of Fries or Salad to any order +5.5
+                  </p>
+                </div>
+                <!-- menu item actual content -->
+                <div class="menu-item-content">
+                  <!-- Menu dish box includes title, price, description -->
+                  <div class="menu-dish-box">
+                    <div class="menu-dish-title-box">
+                      <p class="menu-dish-title heading-tertiary-smaller">
+                        CHICKEN TIKKA MASALA TACOS
+                      </p>
+                      <p class="menu-dish-price heading-tertiary-smaller">10</p>
+                    </div>
+                    <p class="menu-dish-description">
+                      Grilled chipotle chicken stewed in tikka masala sauce,
+                      napa cabbage, pickled red onion, and cilantro.
+                    </p>
+                    <p class="menu-dish-extra"></p>
+                  </div>
+                  <div class="menu-dish-box">
+                    <div class="menu-dish-title-box">
+                      <p class="menu-dish-title heading-tertiary-smaller">
+                        BAJA FISH TACOS
+                      </p>
+                      <p class="menu-dish-price heading-tertiary-smaller">11</p>
+                    </div>
+                    <p class="menu-dish-description">
+                      Freshly beer battered swai, cabbage, pico de gallo,
+                      guacamole, and cilantro lime crema.
+                    </p>
+                    <p class="menu-dish-extra">
+                      Served with a side of fire roasted salsa verde. The
+                      perfect Pilsner companion!
+                    </p>
+                  </div>
+                  <div class="menu-dish-box">
+                    <div class="menu-dish-title-box">
+                      <p class="menu-dish-title heading-tertiary-smaller">
+                        DIABLO SHRIMP TACOS
+                      </p>
+                      <p class="menu-dish-price heading-tertiary-smaller">10</p>
+                    </div>
+                    <p class="menu-dish-description">
+                      Seared adobo marinated shrimp, cabbage, pico de gallo,
+                      guacamole, and cilantro lime crema.
+                    </p>
+                    <p class="menu-dish-extra"></p>
+                  </div>
+                  <div class="menu-dish-box">
+                    <div class="menu-dish-title-box">
+                      <p class="menu-dish-title heading-tertiary-smaller">
+                        PORK BELLY TACOS
+                      </p>
+                      <p class="menu-dish-price heading-tertiary-smaller">11</p>
+                    </div>
+                    <p class="menu-dish-description">
+                      White Marble Farms pork belly, Hoisin sambal glaze,
+                      cabbage, pickled fresno chilis, fried shallots, and herb
+                      aioli.
+                    </p>
+                    <p class="menu-dish-extra">Get your taste buds ready!</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Menu 4 -- Fries -->
+              <div class="menu-item menu-item-4">
+                <!-- menu item top text - Intro to menu item -->
+                <!-- <div>
+                  <p class="menu-item-top-text"></p>
+                </div> -->
+                <!-- menu item actual content -->
+                <div class="menu-item-content">
+                  <!-- Menu dish box includes title, price, description -->
+                  <div class="menu-dish-box">
+                    <div class="menu-dish-title-box">
+                      <p class="menu-dish-title heading-tertiary-smaller">
+                        BOWL OF FRIES
+                      </p>
+                      <p class="menu-dish-price heading-tertiary-smaller">
+                        6.5
+                      </p>
+                    </div>
+                    <p class="menu-dish-description">
+                      Kennebec potatoes cooked ’til golden brown and delicious.
+                      Served with a side of fry sauce.
+                    </p>
+                    <p class="menu-dish-extra"></p>
+                  </div>
+                  <div class="menu-dish-box">
+                    <div class="menu-dish-title-box">
+                      <p class="menu-dish-title heading-tertiary-smaller">
+                        GARBAGE FRIES
+                      </p>
+                      <p class="menu-dish-price heading-tertiary-smaller">
+                        17.5
+                      </p>
+                    </div>
+                    <p class="menu-dish-description">
+                      Grilled chipotle lime chicken, slow roasted pork belly,
+                      cheese, pico de gallo, guacamole, and cilantro lime crema.
+                    </p>
+                    <p class="menu-dish-extra"></p>
+                  </div>
+                  <div class="menu-dish-box">
+                    <div class="menu-dish-title-box">
+                      <p class="menu-dish-title heading-tertiary-smaller">
+                        HANGOVER FRIES
+                      </p>
+                      <p class="menu-dish-price heading-tertiary-smaller">
+                        15.5
+                      </p>
+                    </div>
+                    <p class="menu-dish-description">
+                      Ground beef, caramelized onion, American cheese, pickled
+                      fresno chilis, and fry sauce.
+                    </p>
+                    <p class="menu-dish-extra">Add fried egg +2</p>
+                  </div>
+                  <div class="menu-dish-box">
+                    <div class="menu-dish-title-box">
+                      <p class="menu-dish-title heading-tertiary-smaller">
+                        CHICKEN TIKKA MASALA FRIES
+                      </p>
+                      <p class="menu-dish-price heading-tertiary-smaller">
+                        15.5
+                      </p>
+                    </div>
+                    <p class="menu-dish-description">
+                      Tikka masala stewed chicken, oaxaca cheese, pickled red
+                      onion, and cilantro.
+                    </p>
+                    <p class="menu-dish-extra">
+                      Bold flavors to pair with bold beers!
+                    </p>
+                  </div>
+                  <div class="menu-dish-box">
+                    <div class="menu-dish-title-box">
+                      <p class="menu-dish-title heading-tertiary-smaller">
+                        ENCHILADA FRIES
+                      </p>
+                      <p class="menu-dish-price heading-tertiary-smaller">13</p>
+                    </div>
+                    <p class="menu-dish-description">
+                      Fries smothered with oaxaca cheese and our house made
+                      enchilada sauce, topped with shaved red onion, queso
+                      fresco, and cilantro.
+                    </p>
+                    <p class="menu-dish-extra">
+                      Add grilled chipotle lime chicken +5
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Menu 5 -- Burgers -->
+              <div class="menu-item menu-item-5">
+                <!-- menu item top text - Intro to menu item -->
+                <div>
+                  <p class="menu-item-top-text">
+                    Proudly serving bánh mì sandwiches, again!
+                  </p>
+                </div>
+                <!-- menu item actual content -->
+                <div class="menu-item-content">
+                  <!-- Menu dish box includes title, price, description -->
+                  <div class="menu-dish-box">
+                    <div class="menu-dish-title-box">
+                      <p class="menu-dish-title heading-tertiary-smaller">
+                        ADD FRIES OR SALAD
+                      </p>
+                      <p class="menu-dish-price heading-tertiary-smaller">
+                        5.5
+                      </p>
+                    </div>
+                  </div>
+                  <div class="menu-dish-box">
+                    <div class="menu-dish-title-box">
+                      <p class="menu-dish-title heading-tertiary-smaller">
+                        CRAFT BURGER
+                      </p>
+                      <p class="menu-dish-price heading-tertiary-smaller">12</p>
+                    </div>
+                    <p class="menu-dish-description">
+                      Lettuce, tomatoes, pickles, caramelized onion, American
+                      cheese, and fry sauce. Cooked to medium-well unless
+                      requested otherwise.
+                    </p>
+                    <p class="menu-dish-extra">Add fried egg or bacon +2</p>
+                  </div>
+                  <div class="menu-dish-box">
+                    <div class="menu-dish-title-box">
+                      <p class="menu-dish-title heading-tertiary-smaller">
+                        ENCHILADA BURGER
+                      </p>
+                      <p class="menu-dish-price heading-tertiary-smaller">
+                        13.5
+                      </p>
+                    </div>
+                    <p class="menu-dish-description">
+                      Lettuce, tomatoes, queso fresco, cilantro, shaved red
+                      onion, smothered in enchilada sauce. Cooked to medium-well
+                      unless requested otherwise.
+                    </p>
+                    <p class="menu-dish-extra">Add fried egg or bacon +2</p>
+                  </div>
+                  <div class="menu-dish-box">
+                    <div class="menu-dish-title-box">
+                      <p class="menu-dish-title heading-tertiary-smaller">
+                        BUTTERMILK FRIED CHICKEN SANDWICH
+                      </p>
+                      <p class="menu-dish-price heading-tertiary-smaller">13</p>
+                    </div>
+                    <p class="menu-dish-description">
+                      Lettuce, tomatoes, pickles, and mayo.<br /><b
+                        >Choose from:</b
+                      >
+                      Nashville Hot, Buffalo, Honey Garlic BBQ, or Mango
+                      Habanero
+                    </p>
+                    <p class="menu-dish-extra">
+                      Add fried egg or bacon +2 Warning: Nashville Hot is VERY
+                      spicy. Not for the faint of heart.
+                    </p>
+                  </div>
+                  <div class="menu-dish-box">
+                    <div class="menu-dish-title-box">
+                      <p class="menu-dish-title heading-tertiary-smaller">
+                        NY-STYLE CHOPPED CHEESE
+                      </p>
+                      <p class="menu-dish-price heading-tertiary-smaller">
+                        9.5
+                      </p>
+                    </div>
+                    <p class="menu-dish-description">
+                      Seasoned chopped burger, American cheese, caramelized
+                      onion, lettuce, tomatoes, pickles, mayo, and enchilada
+                      sauce.
+                    </p>
+                    <p class="menu-dish-extra"></p>
+                  </div>
+                  <div class="menu-dish-box">
+                    <div class="menu-dish-title-box">
+                      <p class="menu-dish-title heading-tertiary-smaller">
+                        SIGNATURE BBQ PORK BÁNH MÌ
+                      </p>
+                      <p class="menu-dish-price heading-tertiary-smaller">14</p>
+                    </div>
+                    <p class="menu-dish-description">
+                      Lemongrass honey soy marinated BBQ pork, pickled veggies,
+                      fresh cucumber, cilantro, jalapeno, and mayo. Our most
+                      popular bánh mì!
+                    </p>
+                    <p class="menu-dish-extra"></p>
+                  </div>
+                  <div class="menu-dish-box">
+                    <div class="menu-dish-title-box">
+                      <p class="menu-dish-title heading-tertiary-smaller">
+                        HOT PASTRAMI SANDWICH
+                      </p>
+                      <p class="menu-dish-price heading-tertiary-smaller">16</p>
+                    </div>
+                    <p class="menu-dish-description">
+                      Oaxaca cheese, pickled red onions, pickled fresno chilis,
+                      dill pickles, and dijonnaise.
+                    </p>
+                    <p class="menu-dish-extra">
+                      Explosion of flavors in every bite!
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Menu 6 -- Salads -->
+              <div class="menu-item menu-item-6">
+                <!-- menu item top text - Intro to menu item -->
+                <!-- <div>
+                  <p class="menu-item-top-text"></p>
+                </div> -->
+                <!-- menu item actual content -->
+                <div class="menu-item-content">
+                  <!-- Menu dish box includes title, price, description -->
+                  <div class="menu-dish-box">
+                    <div class="menu-dish-title-box">
+                      <p class="menu-dish-title heading-tertiary-smaller">
+                        MIXED GREENS
+                      </p>
+                      <p class="menu-dish-price heading-tertiary-smaller">9</p>
+                    </div>
+                    <p class="menu-dish-description">
+                      Carrots, tomatoes, cucumber, and croutons.
+                    </p>
+                    <p class="menu-dish-extra">
+                      Choice of citrus vinaigrette, ranch, or blue cheese.
+                    </p>
+                  </div>
+                  <div class="menu-dish-box">
+                    <div class="menu-dish-title-box">
+                      <p class="menu-dish-title heading-tertiary-smaller">
+                        CRAFT COBB SALAD
+                      </p>
+                      <p class="menu-dish-price heading-tertiary-smaller">12</p>
+                    </div>
+                    <p class="menu-dish-description">
+                      Mixed greens, carrots, cucumber, tomatoes, blue cheese
+                      crumbles, chopped bacon, and soft boiled egg.
+                    </p>
+                    <p class="menu-dish-extra">
+                      Choice of citrus vinaigrette, ranch, or blue cheese.
+                    </p>
+                  </div>
+                  <div class="menu-dish-box">
+                    <div class="menu-dish-title-box">
+                      <p class="menu-dish-title heading-tertiary-smaller">
+                        ADD ONS
+                      </p>
+                      <p class="menu-dish-price heading-tertiary-smaller"></p>
+                    </div>
+                    <p class="menu-dish-description">
+                      Soft boiled egg – 2 <br />Grilled chipotle lime chicken –
+                      5 <br />Slow roasted pork belly – 6 <br />Sauteed diablo
+                      shrimp – 6 <br />Grilled marinated steak – 7
+                    </p>
+                    <p class="menu-dish-extra"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section About -->
+      <section class="section-about" id="about">
+        <!-- Container for section content  -->
+        <div class="container container-about">
+          <!-- About Image 1 -->
+          <div class="about-img-box about-img-box-1 fade-in-left">
+            <img
+              src="img/about-img-1-sqshed.jpg"
+              class="about-img about-img-1"
+              alt="Menu photo"
+            />
+          </div>
+          <!-- About Logo -->
+          <div class="about-logo-box fade-in-right">
+            <img
+              src="img/Logo_black.PNG"
+              class="about-logo"
+              alt="The Grill House Logo"
+            />
+          </div>
+          <!-- About Image 2 -->
+          <div class="about-img-box about-img-box-2 fade-in-bottom">
+            <img
+              src="img/about-img-5-reduced-sqshed.jpg"
+              class="about-img about-img-2"
+              alt="About photo"
+            />
+          </div>
+          <!-- About Description -->
+          <div class="about-description-box">
+            <div
+              class="heading-tertiary-sm about-description-title fade-in-right"
+            >
+              ABOUT
+            </div>
+            <p class="about-description fade-in-right">
+              When we opened The Grill House in May 2015, our vision was to
+              create an unassuming watering hole for the locals. In a town with
+              endless options for bars and lounges, we found it challenging to
+              find a friendly bar with a solid craft beer list, good food, and
+              non-gaming/non-smoking. We wanted to provide friends and neighbors
+              alike with the original form of social networking; a fun easy
+              going bar, and a cold pint. Our staunch belief in providing
+              exceptional quality products with friendly service in a clean and
+              welcoming setting has helped us earn the reputation among the
+              locals as one of the best hidden gems in Los Angeles.
+              <br /><br />The Grill House is the culmination of giving our best
+              to the community by providing great food, service, and atmosphere.
+              It allows us an opportunity to create a memorable setting for you
+              to catch up with friends and make new ones over tasty bites and a
+              refreshing drink.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Media -->
+      <section class="section-media">
+        <!-- Media Ratings headings -->
+        <div class="container">
+          <div class="heading-tertiary-sm media-title fade-in">
+            RECOGNITIONS
+          </div>
+        </div>
+        <!-- Media Ratings Container -->
+        <div class="container container-media-ratings fade-in">
+          <!-- Media rating 1 -->
+          <figure class="media-rating media-rating-1">
+            <!-- media-rating stars container -->
+            <div>
+              <ul class="media-rating-container">
+                <li class="media-rating-icon-container">
+                  <ion-icon class="media-rating-icon" name="star"></ion-icon>
+                </li>
+                <li class="media-rating-icon-container">
+                  <ion-icon class="media-rating-icon" name="star"></ion-icon>
+                </li>
+                <li class="media-rating-icon-container">
+                  <ion-icon class="media-rating-icon" name="star"></ion-icon>
+                </li>
+                <li class="media-rating-icon-container">
+                  <ion-icon class="media-rating-icon" name="star"></ion-icon>
+                </li>
+                <li class="media-rating-icon-container">
+                  <ion-icon class="media-rating-icon" name="star"></ion-icon>
+                </li>
+              </ul>
+            </div>
+            <!-- Media rating text -->
+            <div>
+              <p class="media-rating-text">5 Stars</p>
+            </div>
+            <!-- Media logo container -->
+            <div class="media-rating-logo-container">
+              <img
+                class="media-rating-logo"
+                alt="Media rating logo"
+                src="img/featured logos/yelp.svg"
+              />
+            </div>
+          </figure>
+
+          <!-- Media rating 2 -->
+          <figure class="media-rating media-rating-2">
+            <!-- media-rating stars container -->
+            <div>
+              <ul class="media-rating-container">
+                <li class="media-rating-icon-container">
+                  <ion-icon class="media-rating-icon" name="star"></ion-icon>
+                </li>
+                <li class="media-rating-icon-container">
+                  <ion-icon class="media-rating-icon" name="star"></ion-icon>
+                </li>
+                <li class="media-rating-icon-container">
+                  <ion-icon class="media-rating-icon" name="star"></ion-icon>
+                </li>
+                <li class="media-rating-icon-container">
+                  <ion-icon class="media-rating-icon" name="star"></ion-icon>
+                </li>
+                <li class="media-rating-icon-container">
+                  <ion-icon class="media-rating-icon" name="star"></ion-icon>
+                </li>
+              </ul>
+            </div>
+            <!-- Media rating text -->
+            <div>
+              <p class="media-rating-text">4.7 Stars</p>
+            </div>
+            <!-- Media logo container -->
+            <div class="media-rating-logo-container">
+              <img
+                class="media-rating-logo"
+                alt="Media rating logo"
+                src="img/featured logos/youtube-2.svg"
+              />
+            </div>
+          </figure>
+
+          <!-- Media rating 3 -->
+          <figure class="media-rating media-rating-3">
+            <!-- media-rating stars container -->
+            <div>
+              <ul class="media-rating-container">
+                <li class="media-rating-icon-container">
+                  <ion-icon class="media-rating-icon" name="star"></ion-icon>
+                </li>
+                <li class="media-rating-icon-container">
+                  <ion-icon class="media-rating-icon" name="star"></ion-icon>
+                </li>
+                <li class="media-rating-icon-container">
+                  <ion-icon class="media-rating-icon" name="star"></ion-icon>
+                </li>
+                <li class="media-rating-icon-container">
+                  <ion-icon class="media-rating-icon" name="star"></ion-icon>
+                </li>
+                <li class="media-rating-icon-container">
+                  <ion-icon class="media-rating-icon" name="star"></ion-icon>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Media rating text -->
+            <div>
+              <p class="media-rating-text">4.8 Stars</p>
+            </div>
+
+            <!-- Media logo container -->
+            <div class="media-rating-logo-container">
+              <img
+                class="media-rating-logo"
+                alt="Media rating logo"
+                src="img/featured logos/food-network.svg"
+              />
+            </div>
+          </figure>
+        </div>
+
+        <!-- Media Featured logos and quotes grid -->
+        <div class="container media-featured-logos fade-in">
+          <!-- Featured logos -->
+          <div class="featured-logo-cover featured-logo-cover-1">
+            <img
+              src="img/featured logos/facebook-5.svg"
+              class="media-featured-logo"
+              alt="facebook logo"
+            />
+          </div>
+          <div class="featured-logo-cover featured-logo-cover-2">
+            <img
+              src="img/featured logos/uber-eats.svg"
+              class="media-featured-logo"
+              alt="Food network logo"
+            />
+          </div>
+          <div class="featured-logo-cover featured-logo-cover-3">
+            <img
+              src="img/featured logos/instagram-1.svg"
+              class="media-featured-logo"
+              alt="Instagram logo"
+            />
+          </div>
+          <div class="featured-logo-cover featured-logo-cover-4">
+            <img
+              src="img/featured logos/grubhub-1.svg"
+              class="media-featured-logo"
+              alt="Food network logo"
+            />
+          </div>
+          <div class="featured-logo-cover featured-logo-cover-5">
+            <img
+              src="img/featured logos/doordash-logo.svg"
+              class="media-featured-logo"
+              alt="Food network logo"
+            />
+          </div>
+
+          <!-- Quotes under the logos -->
+          <div
+            class="media-featured-text-container media-featured-text-container-1"
+          >
+            <blockquote class="media-featured-text">
+              "Not like your typical burger restaurant."
+            </blockquote>
+          </div>
+          <div
+            class="media-featured-text-container media-featured-text-container-2"
+          >
+            <blockquote class="media-featured-text">
+              "Don't miss out on this local gem!"
+            </blockquote>
+          </div>
+          <div
+            class="media-featured-text-container media-featured-text-container-3"
+          >
+            <blockquote class="media-featured-text">
+              "Has to one of the best restaurants in town."
+            </blockquote>
+          </div>
+          <div
+            class="media-featured-text-container media-featured-text-container-4"
+          >
+            <blockquote class="media-featured-text">
+              "Prime location with prime food."
+            </blockquote>
+          </div>
+          <div>
+            <blockquote
+              class="media-featured-text media-featured-text-container-5"
+            >
+              "One of the best burgers around."
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Contact -->
+      <section class="section-contact" id="contact">
+        <!-- Container that contains contact information and map -->
+        <div class="container container-contact">
+          <!-- Contact Information -->
+          <div class="contact-information fade-in-left">
+            <!-- Contact header -->
+            <div class="contact-header-text">
+              <p class="heading-tertiary-sm margin-bottom-himd">CONTACT US</p>
+            </div>
+            <!-- Contact Details -->
+            <div class="contact-details">
+              <!-- address -->
+              <div class="contact-detail contact-address-container">
+                <div class="contact-icon icon-address">
+                  <ion-icon
+                    class="icon-contact"
+                    name="location-sharp"
+                  ></ion-icon>
+                </div>
+                <div class="contact-text contact-address">
+                  1510 SOUTH MARINA DEL MAR<br />
+                  SANTA MONICA, 90001<br />
+                  LOCATED INSIDE THE PIER
+                </div>
+              </div>
+              <!-- hours -->
+              <div class="contact-detail contact-hours-container">
+                <div class="contact-icon icon-hours">
+                  <ion-icon class="icon-contact" name="time-sharp"></ion-icon>
+                </div>
+                <div class="contact-text contact-hours">
+                  SUN-THURS: 12PM-10PM <br />FRI-SAT: 12PM-11PM
+                </div>
+              </div>
+              <!-- phone -->
+              <div class="contact-detail contact-phone-container">
+                <div class="contact-icon icon-phone">
+                  <ion-icon class="icon-contact" name="call-sharp"></ion-icon>
+                </div>
+                <div class="contact-text contact-phone">323.888.6788</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Map -->
+          <div class="contact-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26457.216006628074!2d-118.50091359721932!3d34.01430909461431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2a4d74d5ea79b%3A0xcd9a111aced18f4d!2sSanta%20Monica%20Pier!5e0!3m2!1sen!2sus!4v1669058439265!5m2!1sen!2sus"
+              width="100%"
+              height="100%"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              class="fade-in-right"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Call to Action -->
+      <section class="section-cta" id="cta">
+        <!-- Container that contains CTA box (for padding purposes so CTA box is smaller) -->
+        <div class="container fade-in-bottom">
+          <!-- CTA container grid (text box and IMG) -->
+          <!-- Only until mobile then the second element appears -->
+          <div class="cta">
+            <div class="cta-text-box">
+              <h2 class="heading-secondary">$10 off your takeout order!</h2>
+              <p class="cta-text">
+                Get a taste of The Grill House at your fingertips. Just click
+                below to select your favorite dishes from our online menu and
+                enjoy $10 off your first online order!
+              </p>
+
+              <!-- Button to sign up -->
+              <div class="btn--cta--container">
+                <a href="#cta" class="btn btn--cta--order">Order now</a>
+              </div>
+            </div>
+
+            <!-- Element hidden until mobile then use it for displaying image -->
+            <div class="cta-img-container">
+              <img class="cta-img" src="img/cta-img-sqshed.jpg" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Section Footer -->
+    <footer class="footer">
+      <!-- Footer content container -->
+      <div class="container container-footer">
+        <!-- Footer logo -->
+        <div class="logo-container-footer fade-in">
+          <a href="#">
+            <img
+              class="logo-img-footer"
+              alt="The Grill House logo"
+              src="img/Logo_black.PNG"
+            />
+          </a>
+        </div>
+
+        <!-- Copyright message -->
+        <div class="footer-message">
+          <p class="copyright">
+            Copyright &copy; 2022 by The Grill House, LLC.<br />
+            All rights reserved.
+          </p>
+        </div>
+      </div>
+
+      <!-- footer links -->
+      <div class="footer-links">
+        <!-- Social icons: Copy from ion icons-->
+        <ul class="social-links">
+          <li>
+            <a class="footer-link" href="https://instagram.com">
+              <ion-icon
+                class="social-icon-footer"
+                name="logo-instagram"
+              ></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a class="footer-link" href="https://www.facebook.com">
+              <ion-icon
+                class="social-icon-footer"
+                name="logo-facebook"
+              ></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a class="footer-link" href="https://twitter.com">
+              <ion-icon
+                class="social-icon-footer"
+                name="logo-twitter"
+              ></ion-icon>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

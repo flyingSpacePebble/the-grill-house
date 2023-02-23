@@ -1,0 +1,972 @@
+/* ************************ */
+/* HEADER */
+/* ************************ */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2e302f;
+
+  height: 9.6rem;
+  padding: 0 2.4rem;
+
+  /* In relation to .main-nav nav bar's absolute position */
+  /* Normally, below doesn't do anything; only when mobile nav applies, below becomes applicable */
+  position: relative;
+
+  /* background-image: url(img/front-img-squooshed.jpg); */
+  /* opacity: 0.5; */
+
+  z-index: 999;
+  /* border-bottom: 0.2rem solid #f5af0c0f; */
+
+  /* box-shadow: 1rem 1rem 0.6rem rgba(0, 0, 0, 0.038); */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 0.4rem;
+}
+
+.logo-img {
+  height: 7.5rem;
+}
+
+.logo-name {
+  height: 4rem;
+  transform: translateY(-6%);
+}
+
+/* For social links and phone number */
+.header-links {
+  display: flex;
+  justify-content: end;
+  gap: 2.4rem;
+  transition: 1.2s all ease;
+}
+
+/* For Header AND Footer */
+/* ul element for social icons */
+.social-links {
+  list-style: none;
+  display: flex;
+  gap: 1.8rem;
+  /* padding-top: 2rem; */
+}
+
+/* ion icons */
+.social-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+  color: #fef7e7;
+  transition: all 0.5s;
+}
+
+.social-icon:hover {
+  color: #dd9e0b;
+}
+
+.header-phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  /* color: #f5af0c; */
+}
+
+.header-phone-number {
+  color: #f6b724;
+  font-size: 1.8rem;
+  font-weight: 500;
+  transition: all 0.5s;
+}
+
+.header-phone-number:hover {
+  color: #dd9e0b;
+}
+
+/* footer link (anchor element inside li) */
+.header-link:link,
+.header-link:visited {
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #767676;
+  transition: all 0.3s;
+}
+
+.header-link:hover,
+.header-link:active {
+  color: #555;
+}
+
+.header-phone-number {
+  text-decoration: none;
+}
+
+/* ************************ */
+/* NAVIGATION */
+/* ************************ */
+
+/* ul element - set it to be flex container */
+.main-nav-list {
+  display: flex;
+  list-style: none;
+  gap: 6rem;
+  align-items: center;
+  transform: translateX(-18%);
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #fef7e7;
+  font-weight: 500;
+  font-size: 1.8rem;
+
+  transition: all 0.3s;
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: #f5af0c;
+}
+
+.nav-cta:link,
+.nav-cta:visited {
+  padding: 1.2rem 2.4rem;
+  border-radius: 9px;
+  color: #d5d6d5;
+  /* background-color:  */
+}
+
+.nav-cta:hover,
+.nav-cta:active {
+  background-color: #bc3604;
+}
+
+/* ////////////////////// */
+/* FOR MOBILE */
+
+/* button */
+/* By default, this button should be hidden, only show when viewport is reduced to mobile */
+.btn-mobile-nav {
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  display: none;
+}
+
+.icon-mobile-nav {
+  height: 4.8rem;
+  width: 4.8rem;
+  color: #d5d6d5;
+}
+
+/* Use attribute for CSS selector - The 'close' icon; Not showing by default */
+.icon-mobile-nav[name="close-outline"] {
+  display: none;
+}
+
+/* ////////////////////// */
+/* FOR STICKY NAVIGATION */
+/* 'sticky' class is added to 'body' element using Javascript when front section leaves the viewport */
+/* Below format will be applied to 'header' element when sticky class is added to 'body' element, since every element is a child of body element */
+.sticky .header {
+  /* position fixed: element will always be at fixed position with respect to viewport regardless of how viewport scrolls */
+  /* Fixed means the element is taken out of the flow, so next element takes its original place */
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 8rem; /* set fixed height so in JS intersectionObserver the rootMargin of -80px can be applied*/
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: #2e302f;
+  z-index: 99; /* z-index should be Less than mobile button */
+  /* border-bottom: 0.2rem solid #f5af0c0f; */
+  box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.166);
+}
+
+/* Below format will be applied to 'section-front' element when 'sticky' class is added to 'body' element, since every element is a child of body element */
+/* To ensure smooth appearance of sticky navigation (since header is now fixed so taken out of flow, we need to compensate it by adding margin to the front-section */
+.sticky .section-hero {
+  /* Set it as the same value as the header height */
+  margin-top: 9.6rem;
+}
+
+/* ************************ */
+/* HERO SECTION */
+/* ************************ */
+
+.section-hero {
+  background-color: #2e302f;
+  padding: 4.8rem 0 9.6rem 0;
+}
+
+/* The grid container */
+.hero {
+  max-width: 120rem;
+  /* centering the element */
+  margin: 0 auto;
+  padding: 2.4rem 2.4rem;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* align-items: center; */
+  align-items: stretch;
+  /* gap: 2.4rem; */
+}
+
+.hero-img-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-img {
+  border-radius: 2px;
+  box-shadow: 0 2.4rem 4.8rem rgb(46, 18, 2, 0.05);
+  /* transform: translateY(-15%); */
+}
+
+.hero-img--1 {
+  width: 100%;
+}
+
+.hero-img--2 {
+  width: 100%;
+  transform: translate(-5%, -5%);
+}
+
+.hero-text-box {
+  position: relative;
+}
+
+.hero-title {
+  position: absolute;
+  top: 4.8rem;
+  left: -12rem;
+  /* margin-top: 4.8rem; */
+  /* margin-bottom: 2.8rem; */
+  /* background-color: #f5af0c; */
+  /* transform: translate(-20%, -180%); */
+}
+
+/* hero section and footer section */
+.icon-contact {
+  height: 2.4rem;
+  width: 2.4rem;
+  color: #dd9e0b;
+}
+
+.hero-descriptions {
+  /* transform: translateY(-100%); */
+  position: absolute;
+  top: 20rem;
+  margin-top: 10rem;
+}
+
+.hero-description {
+  display: flex;
+  gap: 2rem;
+
+  color: #d5d6d5;
+  font-size: 1.6rem;
+  padding: 0 2.4rem;
+  line-height: 1.5;
+}
+
+.hero-phone {
+  color: #dd9e0b;
+}
+
+.hero-contact {
+  margin-bottom: 2.4rem;
+}
+
+.hero-text-sub-box {
+  display: flex;
+  align-items: center;
+}
+
+.hero-sub-description {
+  padding-left: 10rem;
+}
+
+/* ************************ */
+/* MENU MESSAGE SECTION */
+/* ************************ */
+
+.section-menu-message {
+  padding: 9.6rem 0 4.8rem 0;
+}
+
+.grid-menu-message {
+  display: grid;
+  column-gap: 3.2rem;
+  grid-template-columns: 0.5fr 1fr 1.5fr;
+}
+
+.menu-message-img-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-message-img-box-1 {
+  z-index: 1;
+}
+
+.menu-message-img {
+  border-radius: 2px;
+  box-shadow: 0 2.4rem 4.8rem rgb(46, 18, 2, 0.05);
+}
+
+.menu-message-img-1 {
+  width: 100%;
+  transform: translate(5%, -25%);
+}
+
+.menu-message-img-2 {
+  width: 120%;
+  transform: translateX(-10%);
+}
+
+.menu-message-description-box {
+  padding-top: 4.8rem;
+}
+
+.menu-message-description-title {
+  padding: 0 2.4rem;
+}
+
+.menu-message-description {
+  color: #d5d6d5;
+  font-size: 1.6rem;
+  padding: 0 2.4rem;
+  line-height: 1.8;
+}
+
+/* ************************ */
+/* MENU SECTION */
+/* ************************ */
+
+.section-menu {
+  padding: 9.6rem 0;
+}
+
+/* Menu title segment */
+.menu-title {
+  margin-bottom: 6rem;
+  margin-left: 4.4rem;
+}
+
+/* Menu content segment */
+.menu-content {
+  display: flex;
+}
+
+/* div that contains menu buttons */
+.menu-category-container {
+  /* background-color: #2e302f; */
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+  align-items: end;
+}
+
+/* Menu buttons */
+.btn-menu {
+  display: inline-block;
+  border: none;
+  width: 100%;
+  /* transform: translateY(-50%); */
+  padding: 1.2rem 2.4rem;
+  /* border-radius: 2.4rem; */
+  cursor: pointer;
+  color: #d5d6d5;
+  font-size: 2rem;
+  font-family: inherit;
+  font-weight: 450;
+  letter-spacing: 0.25px;
+  transition: all 0.3s ease-in-out;
+  /* box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.075); */
+  background-color: #2e302f;
+}
+
+.btn-menu:hover {
+  /* background-color: #ef6937; */
+  color: #c48c0a;
+}
+
+.btn-menu-active {
+  color: #f5af0c;
+  font-weight: 500;
+}
+
+/* div that contains all menu item contents (contains specials menus, snacks menu, etc. */
+.menu-item-box {
+  width: 100%;
+  padding-left: 6rem;
+  padding-top: 1.2rem;
+  padding-right: 4rem;
+}
+
+/* Each menu item div (specials, snacks, etc.) */
+.menu-item {
+  display: none;
+  /* transition: all 1s ease-in-out; */
+  /* margin: 4.8rem auto;
+  font-size: 1.7rem;
+  padding: 1rem 6.4rem 9.8rem 6.4rem;
+  border-radius: 11px; */
+}
+
+/* Active menu item div (specials, snacks, etc.) */
+.menu-item-active {
+  display: block;
+  /* Fade In Animation source: https://blog.hubspot.com/website/css-fade-in#text-transition */
+  animation: fadeIn 2.5s;
+  -webkit-animation: fadeIn 2.5s;
+  -moz-animation: fadeIn 2.5s;
+  -o-animation: fadeIn 2.5s;
+  -ms-animation: fadeIn 2.5s;
+}
+
+/* /////////////////////////// */
+/* For Fade In Animation source: https://blog.hubspot.com/website/css-fade-in#text-transition */
+@keyframes fadeIn {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* END - For Fade In Animation */
+/* ///////////////////////// */
+
+.menu-item-top-text {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: #d5d6d5;
+  margin-bottom: 2.8rem;
+}
+
+.menu-dish-box {
+  margin-bottom: 3.4rem;
+}
+
+.menu-dish-title-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-dish-title:hover {
+  color: #f6b724;
+  transition: all 0.3s;
+}
+
+.menu-dish-price:hover {
+  color: #f6b724;
+  transition: all 0.3s;
+}
+
+.menu-dish-description {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: #abacac;
+  margin-bottom: 0.5rem;
+}
+
+.menu-dish-extra {
+  font-style: italic;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: #abacac;
+}
+
+/* ************************ */
+/* ABOUT SECTION */
+/* ************************ */
+
+.section-about {
+  padding: 9.6rem 0;
+}
+
+/* .grid-about {
+  display: grid;
+  column-gap: 3.2rem;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: -30rem;
+} */
+
+.container-about {
+  position: relative;
+  margin-bottom: 38rem;
+  /* Make sure to set height explicitly otherwise absolute 'top' won't work */
+  height: 100vh;
+}
+
+.about-img-box-1 {
+  /* position: relative; */
+  position: absolute;
+  left: 0%;
+  /* width: 70%; */
+  display: flex;
+  align-items: start;
+  justify-content: start;
+}
+
+.about-img {
+  /* border-radius: 2px; */
+  box-shadow: 0 2.4rem 4.8rem rgb(46, 18, 2, 0.05);
+}
+
+.about-img-1 {
+  /* position: absolute; */
+  width: 75%;
+  /* height: 100%; */
+  /* transform: translate(20%, 0); */
+  box-shadow: 2.4rem 2.4rem 4.8rem #3123021f;
+}
+
+.about-img-box-2 {
+  /* position: relative; */
+  position: absolute;
+
+  left: 2%;
+  bottom: -2%;
+  /* display: flex;
+  align-items: start;
+  justify-content: start; */
+  z-index: 2;
+}
+
+/* Pseudo element: a background layer for about-img-2 */
+/* .about-img-box-2::after { */
+/* content: "";
+  position: absolute; */
+/* Below matches with about-img-2 */
+/* width: 70%; */
+/* Below is set manually, check if there's better way to do so */
+/* height: 48.2%; */
+/* Below matches with about-img-2 */
+/* top: -18%;
+  left: -2%;
+  background-color: #74280712;
+  z-index: 2; */
+/* } */
+
+.about-img-2 {
+  /* position: absolute; */
+  width: 30%;
+  /* transform: translate(18%, -10%); */
+
+  /* Make sure to match above pseudo element's top and left */
+  /* top: 38%;
+  left: -5%; */
+  /* z-index: -1; */
+  box-shadow: 2.4rem 2.4rem 4.8rem #3123021f;
+  border-radius: 1%;
+}
+
+.about-logo-box {
+  /* position: relative; */
+  position: absolute;
+  right: 1%;
+  justify-self: end;
+  z-index: 2;
+  display: flex;
+  align-items: start;
+  justify-content: end;
+  padding-right: 1.2rem;
+}
+
+.about-logo {
+  /* position: absolute; */
+
+  width: 50%;
+  /* transform: translateY(-6%); */
+}
+
+.about-description-box {
+  position: absolute;
+  right: -2%;
+  margin-top: 26rem;
+  /* float: right; */
+  width: 43%;
+  padding: 6.4rem 3.6rem;
+
+  /* transform: translate(20%, -55%); */
+  background-color: #5859594e;
+  /* z-index: 3; */
+  text-shadow: 2px 1px 5px #2c342c;
+}
+
+.about-description-title {
+  padding-left: 2.4rem;
+  /* letter-spacing: 0.75px; */
+
+  /* margin-bottom: 4.8rem; */
+}
+
+.about-description {
+  color: #d5d6d5;
+  font-size: 1.6rem;
+  padding: 0 2.4rem;
+  line-height: 1.8;
+}
+
+/* ************************ */
+/* MEDIA SECTION */
+/* ************************ */
+
+.section-media {
+  padding: 4.8rem 0 3.2rem 0;
+}
+
+.media-title {
+  margin-bottom: 8rem;
+  text-align: center;
+  padding-bottom: 2.5rem;
+  border-bottom: 0.2rem solid #f5af0c0f;
+}
+
+/* media-ratings grid */
+.container-media-ratings {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 6rem;
+  align-items: stretch;
+  text-align: center;
+  margin-bottom: 9.6rem;
+}
+
+/* Figure (media-rating card) */
+.media-rating {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to bottom, #1718181b, #090a0930);
+  padding: 3.6rem 1.2rem;
+  box-shadow: 0 0rem 2.4rem rgba(0, 0, 0, 0.015);
+  transition: all 0.6s;
+  /* overflow: hidden; */
+  border-radius: 5px;
+
+  /* filter: blur(50%); */
+}
+
+/* Add hover effect to element */
+.media-rating:hover {
+  /* translateY only moves the element in Y direction, negative means up */
+  transform: translateY(-1.2rem);
+  /* When element moves up, shadow should be bigger/darker, as it's closer to the 'light source' */
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.06);
+}
+
+/* ul list of rating stars */
+.media-rating-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+}
+
+/* Headshots */
+.media-rating-logo {
+  width: 30%;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  /* filter: brightness(0) invert(1);
+  opacity: 50%; */
+}
+
+/* ion icons */
+.media-rating-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+  color: #f7bf3d;
+}
+
+.media-rating-text {
+  display: inline-block;
+  font-size: 1.8rem;
+  line-height: 1.8;
+  color: #c0c1c1;
+  text-align: left;
+}
+
+/* logo container */
+.media-featured-logos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  /* row-gap: 1rem; */
+  /* background-color: #2022215d; */
+}
+
+/* .featured-logo-cover {
+  background-color: #f5af0c48;
+  z-index: 3;
+} */
+
+/* logos */
+.media-featured-logo {
+  /* height: 3.2rem; */
+  width: 12rem;
+  /* TEMP below: Change brightness to 0 when good logos are found */
+  filter: brightness(0) invert(1);
+  /* brightness 0 turns img to black, invert turns it to white */
+  opacity: 90%;
+  /* Img fades 50%, but seems like it's gray */
+  /* This is better than grayscale here cuz now the img has the uniform 'gray' color */
+}
+
+.media-featured-text-container {
+  padding: 2.4rem;
+}
+
+.media-featured-text {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: #c0c1c1;
+  text-align: center;
+  opacity: 60%;
+}
+
+/* ************************ */
+/* CONTACT SECTION */
+/* ************************ */
+
+.section-contact {
+  padding: 9.6rem 0;
+}
+
+.container-contact {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  margin-top: 4.8rem;
+  margin-bottom: 2.4rem;
+}
+
+.contact-information {
+  width: 130%;
+  border-radius: 5px;
+  padding-top: 5.6rem;
+  padding-left: 4.8rem;
+  /* transform: translate(20%, 0); */
+  /* background-color: #2e302f; */
+  background-image: linear-gradient(to right bottom, #1718188a, #090a090f);
+}
+
+.contact-details {
+  margin-top: 9.6rem;
+  padding-bottom: 13rem;
+}
+
+/* hero section and footer section */
+/* .icon-contact {
+  height: 2.4rem;
+  width: 2.4rem;
+  color: #dd9e0b;
+} */
+
+.contact-detail {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.contact-text {
+  color: #d5d6d5;
+  font-size: 1.5rem;
+  padding: 0 2.4rem;
+  line-height: 1.4;
+}
+
+.contact-map {
+  height: 75%;
+  align-self: stretch;
+  border-radius: 1px;
+  overflow: hidden;
+  transform: translateY(25%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* you need to match the shadow color to your background or image border for the desired blur effect*/
+  box-shadow: 0 0 8px 8px #2e302f inset;
+
+  /* background-image: linear-gradient(to right bottom, #f5af0c3f, #f5af0c3f); */
+}
+
+/* ************************ */
+/* CTA SECTION */
+/* ************************ */
+
+.section-cta {
+  /* top right bottom left */
+  padding: 9.6rem 0 12.8rem 0;
+}
+
+/* CTA container (text box and IMG) */
+.cta {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+  overflow: hidden;
+
+  color: #2e1202;
+
+  background-image: linear-gradient(to right, #312302, #31230210),
+    url(img/cta-img-sqshed.jpg);
+  background-size: cover;
+  /* background-position is useful when img is much larger than the container size, then top/bottom/center will set the img to be displaying in the limited container accordingly */
+  background-position: top right;
+
+  margin-top: 1.2rem;
+}
+
+.cta-text-box {
+  padding: 12rem 6.4rem 8.8rem 6.4rem;
+}
+
+/* Explicitly define margin-bottom: reduce it */
+/* .cta .heading-secondary {
+  margin-top: 4.8rem;
+  margin-bottom: 6.4rem;
+
+  text-shadow: 2px 1px 5px #2c342c;
+} */
+
+.cta-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-top: 10.8rem;
+  margin-bottom: 5.2rem;
+  margin-right: 7.2rem;
+  color: #d5d6d5;
+}
+
+/* Hidden until mobile screen */
+.cta-img-container {
+  display: none;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* Hidden until mobile screen */
+.cta-img {
+  width: 100%;
+}
+
+.cta *:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.6rem rgba(253, 242, 233, 0.5);
+}
+
+/* ************************ */
+/* FOOTER SECTION */
+/* ************************ */
+
+/* Section footer */
+.footer {
+  padding: 4.8rem 0;
+  border-top: 0.2rem solid #292b2a67;
+}
+
+.container-footer {
+  display: flex;
+  flex-direction: column;
+  /* gap: 3rem; */
+}
+
+.logo-container-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-img-footer {
+  height: 27rem;
+}
+
+.footer-message {
+  text-align: center;
+}
+
+/* copyright message */
+.copyright {
+  font-size: 1.4rem;
+  color: #767676;
+  line-height: 1.6;
+
+  transform: translateY(-20%);
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  transform: translateY(40%);
+  transition: all 0.3s;
+}
+
+.social-icon-footer {
+  height: 2.4rem;
+  width: 2.4rem;
+  color: #c48c0a;
+  transition: all 0.5s;
+}
+
+.social-icon-footer:hover {
+  color: #936907;
+}
